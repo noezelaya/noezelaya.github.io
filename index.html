@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Puntos de casos de usos</title>
+	
+</head>
+
+<body style="background-color:silver";>
+	<div id="principal" style="background-color:#D0D3D4; width: 80%;  margin: 0 auto; font-family: arial" >
+	<div id="titulo" align="center" > <br><br><h1>Calculo de puntos de casos de usos por Noé Zelaya (ZB15003)</h1> <div id="ayuda" align="left" style="width: 40%; margin: 0 auto;"><ul><li><a href="https://drive.google.com/file/d/1NADuQRmxDUzN3rq7iV7iz-Eg2QCWh5-M/view?usp=sharing">Ayuda del programa</a></li></ul></div>
+	</div>
+	<div><h3> Cálculo del factor sin ajustar correspondiente a los actores (UAW).</h3> <p>A continución se mostrará los valores que debera asignar para la calificación de sus actores </p></div>
+	<div>
+		<table style="border: 1px solid black; border-collapse: collapse;">
+  <tr style="border: 1px solid black; ">
+    <th>Tipo de actor</th>
+    <th>Descripción</th>
+    <th>Factor</th>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>Simple</td>
+    <td>Otro sistema que interactúa con el sistema a desarrollar mediante una interfaz de programación (API).</td>
+    <td>1</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>Medio</td>
+    <td>Otro sistema interactuando a través de un protocolo (ej. TCP/IP) o una persona interactuando a través de una interfaz en modo texto.</td>
+    <td>2</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>Complejo</td>
+    <td>Una persona que interactúa con el sistema mediante una interfaz gráfica (GUI).</td>
+    <td>3</td>
+  </tr>
+</table>
+	</div>
+
+		<div >
+			<p>Con lo anterior visto, por favor ingrese la cantidad de actores simple, medio y complejos posea(en caso de no tener alguno colocar 0) luego presione el botón que dice "UAW" y avance al siguiente paso</p><br>
+			simple   <input type="number" name="" id="Asim" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+			medio    <input type="number" name="" id="Amed" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+			complejo <input type="number" name="" id="Acom" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+			<button onclick="calculateUAW ()">UAW</button>
+			<h4 id = resUAW><br></h1>
+		</div>
+	<div>
+		<h3>CÁLCULO DEL FACTOR DE LOS CASOS DE USO SIN AJUSTAR (UUCW)</h3>
+		<p>En esta etapa el "UUCW" se calcula con los casos de usos que posea, se puede calcular con las trasacciones que se pueden realizar en un caso de usoy lo evalua con la siguiente tabla:</p>
+	</div>
+	<div>
+		<table style="border: 1px solid black; border-collapse: collapse;">
+  <tr style="border: 1px solid black; ">
+    <th>Tipo de caso de uso</th>
+    <th>Descripción</th>
+    <th>Factor</th>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>Simple</td>
+    <td>3 transacciones o menos</td>
+    <td>5</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>Medio</td>
+    <td>4 a 7 transacciones</td>
+    <td>10</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>Complejo</td>
+    <td>Más de 7 trasacciones</td>
+    <td>15</td>
+  </tr>
+</table>
+	</div>
+	<div>
+		<p>Basado en clases de análisis: Toma en cuenta el número de clases que tiene un caso de uso y lo
+evalúa según la siguiente tabla:</p>
+	</div>
+	<div>
+		<table style="border: 1px solid black; border-collapse: collapse;">
+  <tr style="border: 1px solid black; ">
+    <th>Tipo de caso de uso</th>
+    <th>Descripción</th>
+    <th>Factor</th>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>Simple</td>
+    <td>Menos de 5 clases</td>
+    <td>5</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>Medio</td>
+    <td>5 a 10 clases</td>
+    <td>10</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>Complejo</td>
+    <td>Más de 10 clases</td>
+    <td>15</td>
+  </tr>
+</table>
+	</div>
+	<div >
+			<p>Con lo anterior visto, por favor ingrese la cantidad de casos de usos simple, medio y complejos que posea(en caso de no tener alguno colocar 0), ya sea que utilice el método basado en transacciones o basado en clases de análisis, luego presione el botón que dice "UUCW" y avance al siguiente paso</p><br>
+			simple   <input type="number" name="" id="CUsim" placeholder="valor" style="margin: .4rem 0;"><br>
+			medio    <input type="number" name="" id="CUmed" placeholder="valor" style="margin: .4rem 0;"><br>
+			complejo <input type="number" name="" id="CUcom" placeholder="valor" style="margin: .4rem 0;"><br>
+			<button onclick="calculateUUCW ()">UUCW</button>
+			<h4 id = resUUCW><br></h1>
+		</div>
+		<div>
+			<h3>Cálculo de los factores de complejidad técnica (TCF)</h3>
+			<p>Este se compone de 13 puntos que evalúan la complejidad de los módulos del sistema que se
+desarrolla, cada uno de estos factores tienen un peso definido con los cuales se obtendrá puntos
+ponderados por cada uno de ellos, según la valoración que se le asigne. Para una mejor comprensión, a continuación, se mostrará una tabla con los ítems:</p></div>
+	<div>
+		
+	</div>
+	<div>
+		<table style="border: 1px solid black; border-collapse: collapse;">
+  <tr style="border: 1px solid black; ">
+    <th>Factor</th>
+    <th>Descripción</th>
+    <th>Peso</th>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>T1</td>
+    <td>Sistema distribuido</td>
+    <td> 2</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>T2</td>
+    <td>Objetivos de performance o tiempo de respuesta</td>
+    <td> 1</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>T3</td>
+    <td>Eficiencia del usuario final</td>
+    <td> 1</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+  	<td>T4</td>
+  	<td>Procesamiento interno complejo.</td>
+  	<td> 1</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+  	<td>T5</td>
+  	<td>El código debe ser reutilizable.</td>
+  	<td> 1</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+  	<td>T6</td>
+  	<td>Facilidad de instalación.</td>
+  	<td> 0.5</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+  	<td>T7</td>
+  	<td>Facilidad de uso.</td>
+  	<td> 0.5</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+  	<td>T8</td>
+  	<td>Portabilidad.</td>
+  	<td> 2</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+  	<td>T9</td>
+  	<td>Facilidad de cambio.</td>
+  	<td> 1</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+  	<td>T10</td>
+  	<td>Concurrencia.</td>
+  	<td> 1</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+  	<td>T11</td>
+  	<td>Incluye objetivos especiales de seguridad.</td>
+  	<td> 1</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+  	<td>T12</td>
+  	<td>Provee acceso directo a terceras partes.</td>
+  	<td> 1</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+  	<td>T13</td>
+  	<td>Se requiere facilidades especiales de entrenamiento a usuario.</td>
+  	<td> 1</td>
+  </tr>
+</table>
+</div>
+<div>
+	<p>Cada uno de estos puntos se debe evaluar según la siguiente escala:</p>
+	<table style="border: 1px solid black; border-collapse: collapse;">
+  <tr style="border: 1px solid black; ">
+    <th>Descripción</th>
+    <th>Valor</th>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>Irrelevante</td>
+    <td>De 0 a 2</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>Medio</td>
+    <td>De 3 a 4</td>
+  </tr>
+	<tr style="border: 1px solid black;">
+    <td>Esencial</td>
+    <td>5</td></tr></table>
+</div>
+	<div>
+		<p>Ahora ingrese los factores de complejidad técnica según su evaluación (asegurese de llenar todos los campos, incluyendo los ceros), una vez termine de llenar cada factor presione el botón "TCF"</p>
+		</div>
+	<div>
+		    T1  <input type="number" name="" id="TCF1" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+			T2  <input type="number" name="" id="TCF2" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+			T3  <input type="number" name="" id="TCF3" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+			T4  <input type="number" name="" id="TCF4" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+			T5  <input type="number" name="" id="TCF5" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+			T6  <input type="number" name="" id="TCF6" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+			T7  <input type="number" name="" id="TCF7" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+			T8  <input type="number" name="" id="TCF8" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+			T9  <input type="number" name="" id="TCF9" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+			T10  <input type="number" name="" id="TCF10" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+			T11  <input type="number" name="" id="TCF11" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+			T12  <input type="number" name="" id="TCF12" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+			T13  <input type="number" name="" id="TCF13" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+			<button onclick="calculateTCF ()">TCF</button>
+			<h4 id = resTCF><br></h1>
+	</div>
+	<div>
+		<h3>CÁLCULO DE LOS FACTORES DE ENTORNO (EF)</h3>
+		<p>Los factores sobre los cuales se realiza la evaluación son 8 puntos, que están relacionados con las habilidades y experiencia del grupo de personas involucradas con el desarrollo del proyecto. Estos factores se muestran a continuación:</p>
+	</div>
+	<div>
+		<table style="border: 1px solid black; border-collapse: collapse;">
+  <tr style="border: 1px solid black; ">
+    <th>Factor</th>
+    <th>Descripción</th>
+    <th>Peso</th>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>E1</td>
+    <td>Familiaridad con el modelo de proyecto utilizado.</td>
+    <td>1.5</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>E2</td>
+    <td>Experiencia en la aplicación.</td>
+    <td>0.5</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>E3</td>
+    <td>Experiencia en orientación a objetos.</td>
+    <td>1</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>E4</td>
+    <td>Capacidad del analista líder.</td>
+    <td>0.5</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>E5</td>
+    <td>Motivación</td>
+    <td>1</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>E6</td>
+    <td>Estabilidad de los requerimientos.</td>
+    <td>2</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>E7</td>
+    <td>Personal part-time.</td>
+    <td>-1</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>E8</td>
+    <td>Dificultad del lenguaje de programación.</td>
+    <td>-1</td>
+  </tr>
+	</table>
+	<p>Cada uno de estos factores se debe calificar con un valor de 0 a 5</p>
+	</div>
+	<div>
+		E1  <input type="number" name="" id="EF1" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+		E2  <input type="number" name="" id="EF2" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+		E3  <input type="number" name="" id="EF3" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+		E4  <input type="number" name="" id="EF4" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+		E5  <input type="number" name="" id="EF5" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+		E6  <input type="number" name="" id="EF6" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+		E7  <input type="number" name="" id="EF7" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+		E8  <input type="number" name="" id="EF8" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+		<button onclick="calculateEF ()">EF</button>
+		<h4 id = resEF><br></h1>
+	</div>
+	<div>
+		<h3>Estimación de esfuerzo en horas-hombre</h3>		
+		<p>Para conocer el resultado en cuanto a horas para su proyecto, el siguiente paso esta basado en los factores ambientales, contabilizará sus valores ambientales del E1 al E6 que son menores que tres y los factores E7 y E8 si son mayores que 3. </p>
+	</div>
+	<div>
+		<table style="border: 1px solid black; border-collapse: collapse;">
+  <tr style="border: 1px solid black; ">
+    <th>Factor</th>
+    <th>Filtro</th>
+    </tr>
+  <tr style="border: 1px solid black;">
+    <td>De E1 a E6</td>
+    <td>....Factor <3  </td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>De E7 a E8</td>
+    <td>....Factor >3  </td>
+  </tr>
+
+</table>
+	</div>
+	<div>
+		  Factores: <input type="number" name="" id="H0" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+		
+		<p>Ya casi terminamos, ahora solamente ingrese sus datos obtenidos anteriormente, es decir el factor sin ajustar correspondiente a los actores (UAW), factor de los casos de usos sin ajustar (UUCW), factores de complejidad técnica (TCF) y los factores de entorno (EF). Ingrese solamente el resultado y asegurese de que estan todos llenos, si no posee alguno de estos factores repita por favor el factor que no tiene o todos en caso de haber tenido algun error.</p>
+	</div>
+	<div>
+		UAW  <input type="number" name="" id="H1" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+		UUCW  <input type="number" name="" id="H2" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+		TCF  <input type="number" name="" id="H3" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+		EF  <input type="number" name="" id="H4" placeholder="valor" style="margin: .4rem 0;" min="0"><br>
+		<button onclick="calculateHoras ()">Horas</button>
+		<h4 id = resHoras><br></h1>
+		<h4 id = r1><br></h1>
+		<h4 id = r2><br></h1>
+		<h4 id = r3><br></h1>
+		<h4 id = r4><br></h1>
+		<h4 id = r5><br></h1>
+
+	</div>
+
+	</div>
+
+
+<script src="CU.js"></script>
+</body>
+</html>
