@@ -146,17 +146,19 @@ var diseno = 0;
 var progra = 0;
 var pruebas = 0;
 var sobrecarga = 0;
+var horasTotales = 0;
 
-var analisis = parseFloat(horas) * 0.10;
-var diseno = parseFloat(horas) * 0.20;
-var progra = parseFloat(horas) * 0.40;
-var pruebas = parseFloat(horas) * 0.15;
-var sobrecarga = parseFloat(horas) * 0.15;
+var horasTotales = (100*parseFloat(horas))/40;
+var analisis = parseFloat(horasTotales) * 0.10;
+var diseno = parseFloat(horasTotales) * 0.20;
+var progra = parseFloat(horasTotales) * 0.40;
+var pruebas = parseFloat(horasTotales) * 0.15;
+var sobrecarga = parseFloat(horasTotales) * 0.15;
 
 
 	if(!isNaN(horas))
 {
-	document.getElementById("resHoras").innerHTML = "Horas-hombre: " + horas;
+	document.getElementById("resHoras").innerHTML = "Horas Totales: " + horasTotales;
 	document.getElementById("r1").innerHTML = "Horas para analisis: " + analisis;
 	document.getElementById("r2").innerHTML = "Horas para diseño: " + diseno;
 	document.getElementById("r3").innerHTML = "Horas para programación: " + progra;
